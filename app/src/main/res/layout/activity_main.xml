@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainActivity"
+            type="com.hdh.hwangdahyeon.tipcalculator.ui.main.MainActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main">
+
+        <com.hdh.hwangdahyeon.tipcalculator.ui.view.CalculatorView
+            android:id="@+id/clView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/aritasemi"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="HOW MUCH?"
+            android:textColor="#273982"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/clAmount"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/glAmount"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glAmount">
+
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:cursorVisible="false"
+                android:fontFamily="@font/aritasemi"
+                android:gravity="center"
+                android:hint="00"
+                android:imeOptions="actionDone"
+                android:includeFontPadding="false"
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:textColor="#273982"
+                android:textColorHint="#273982" />
+
+            <TextView
+                android:id="@+id/tvDollar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aritasemi"
+                android:includeFontPadding="false"
+                android:text="$"
+                android:textColor="#273982"
+                app:layout_constraintLeft_toRightOf="@+id/etAmount"
+                app:layout_constraintTop_toTopOf="@+id/etAmount" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glPercentVerticalLeftParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glPercentVerticalLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.29" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glPercentVerticalCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glPercentVerticalRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.71" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glPercentVerticalRightParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.92" />
+
+        <TextView
+            android:id="@+id/tvPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.4"
+            android:fontFamily="@font/aritalight"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="THE PERCENTAGE"
+            android:textColor="#ffffff"
+            android:textSize="22.5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/glPercent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glPercent" />
+
+        <Button
+            android:id="@+id/btPercent12"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.4"
+            android:background="#ffffff"
+            android:fontFamily="@font/aritasemi"
+            android:includeFontPadding="false"
+            android:text="12%"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintLeft_toLeftOf="@+id/glPercentVerticalLeftParent"
+            app:layout_constraintRight_toRightOf="@+id/glPercentVerticalLeft"
+            app:layout_constraintTop_toBottomOf="@+id/tvPercentage"
+            app:layout_constraintWidth_percent="0.19" />
+
+        <Button
+            android:id="@+id/btPercent15"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.4"
+            android:background="#ffffff"
+            android:fontFamily="@font/aritasemi"
+            android:includeFontPadding="false"
+            android:text="15%"
+            android:textColor="#1e1e1e"
+            android:textSize="30dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintLeft_toLeftOf="@+id/glPercentVerticalLeft"
+            app:layout_constraintRight_toRightOf="@+id/glPercentVerticalCenter"
+            app:layout_constraintTop_toBottomOf="@+id/tvPercentage"
+            app:layout_constraintWidth_percent="0.19" />
+
+
+        <Button
+            android:id="@+id/btPercent18"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.4"
+            android:background="#ffffff"
+            android:fontFamily="@font/aritasemi"
+            android:includeFontPadding="false"
+            android:text="18%"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintLeft_toLeftOf="@+id/glPercentVerticalCenter"
+            app:layout_constraintRight_toRightOf="@+id/glPercentVerticalRight"
+            app:layout_constraintTop_toBottomOf="@+id/tvPercentage"
+            app:layout_constraintWidth_percent="0.19" />
+
+        <Button
+            android:id="@+id/btPercent20"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.4"
+            android:background="#ffffff"
+            android:fontFamily="@font/aritasemi"
+            android:includeFontPadding="false"
+            android:text="20%"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintLeft_toLeftOf="@+id/glPercentVerticalRight"
+            app:layout_constraintRight_toRightOf="@+id/glPercentVerticalRightParent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPercentage"
+            app:layout_constraintWidth_percent="0.19" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btPercent20">
+
+
+            <TextView
+                android:id="@+id/tvInputText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:alpha="0.4"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/aritalight"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="or YOU CAN HAVE OWN"
+                android:textColor="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etInput"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:alpha="0.4"
+                android:background="@android:color/transparent"
+                android:cursorVisible="false"
+                android:fontFamily="@font/aritalight"
+                android:gravity="center"
+                android:hint="00"
+                android:imeOptions="actionDone"
+                android:includeFontPadding="false"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:textSize="30dp"
+                app:layout_constraintLeft_toRightOf="@+id/tvInputText" />
+
+            <TextView
+                android:id="@+id/tvInputPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.4"
+                android:fontFamily="@font/aritalight"
+                android:includeFontPadding="false"
+                android:text="%"
+                android:textColor="#ffffff"
+                app:layout_constraintLeft_toRightOf="@+id/etInput" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.76" />
+
+        <TextView
+            android:id="@+id/tvTipText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aritasemi"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="TIP"
+            android:textColor="#273982"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/glTip"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glTip" />
+
+        <TextView
+            android:id="@+id/tvTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aritasemi"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="0.0$"
+            android:textColor="#273982"
+            android:textSize="25dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTipText" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/glTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.88" />
+
+
+        <TextView
+            android:id="@+id/tvTotalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/aritasemi"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="TOTAL"
+            android:textColor="#273982"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/glTotal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/glTotal" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aritasemi"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="0.0$"
+            android:textColor="#273982"
+            android:textSize="25dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalText" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
